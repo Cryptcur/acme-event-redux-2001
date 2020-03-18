@@ -78,6 +78,19 @@
           );
       };
 
+      const Nav = ({ events }) => {
+        return (
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/events">Events</Link>
+          </nav>
+        );
+      };
+
+      const Home = ({ events }) => {
+        return <div>There are ({events.length}) events!</div>;
+      };
+
       const Events = ({ events }) => {
         return (
           <ul>
@@ -87,10 +100,7 @@
           </ul>
         );
       };
-      const Home = ({ events }) => {
-        return <div>There are ({events.length}) events!</div>;
-      };
-
+      const Nav = connect(_Nav);
       const Home = connect(_Home);
       const Events = connect(_Events);
 
